@@ -1,0 +1,241 @@
+/* ============================================
+   NOIR OUD — Premium Perfume Landing
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0b0906;
+  --bg-elevated: #14100b;
+  --bg-card: #1a1510;
+  --gold: #c9a227;
+  --gold-soft: #d9bc6b;
+  --amber: #8a4b23;
+  --amber-glow: #b5651d;
+  --ivory: #ece3d1;
+  --muted: #948a76;
+  --line: rgba(201, 162, 39, 0.22);
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ---------- utility ---------- */
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.7rem;
+  color: var(--gold-soft);
+  font-weight: 500;
+}
+
+.section {
+  position: relative;
+  padding: 8rem 6vw;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 6vw;
+  }
+}
+
+.hairline {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.btn-gold {
+  font-family: var(--font-body);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--gold-soft);
+  border: 1px solid var(--line);
+  padding: 1rem 2.2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-101%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-gold:hover {
+  color: var(--bg);
+  border-color: var(--gold);
+}
+
+.btn-gold:hover::before {
+  transform: translateX(0);
+}
+
+/* ---------- noise / grain overlay for texture ---------- */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- scrollbar ---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--amber);
+}
+
+/* ---------- collection grid: 4 cols desktop, responsive down ---------- */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- journal card deck ---------- */
+
+@media (max-width: 780px) {
+  .journal-deck-wrap {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- contact section ---------- */
+
+@media (max-width: 780px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+/* ---------- footer ---------- */
+
+@media (max-width: 700px) {
+  .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-columns {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.4rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ---------- nav: inline links on desktop, drawer trigger on mobile ---------- */
+
+.nav-mobile-trigger {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-mobile-trigger {
+    display: flex !important;
+  }
+}
+
+/* ---------- composition (orbit diagram) responsive stack ---------- */
+
+@media (max-width: 760px) {
+  .notes-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- global small-screen safety ---------- */
+
+@media (max-width: 480px) {
+  .section {
+    padding: 4rem 5vw;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .story-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- quick view modal ---------- */
+
+@media (max-width: 700px) {
+  .quick-view-modal {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- scent finder result highlight ---------- */
+
+@keyframes highlightPulse {
+  0% { box-shadow: 0 0 0 0 rgba(201,162,39,0.6); border-color: var(--gold); }
+  70% { box-shadow: 0 0 0 14px rgba(201,162,39,0); border-color: var(--gold); }
+  100% { box-shadow: 0 0 0 0 rgba(201,162,39,0); border-color: var(--line); }
+}
+
+.highlight-pulse {
+  animation: highlightPulse 1.6s ease-out;
+}
