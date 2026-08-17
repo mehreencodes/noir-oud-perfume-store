@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useDocumentTitle } from './hooks/useDocumentTitle';
+import bottleImage from './assets/perfume.png';
 
 
 function Bottle() {
@@ -33,7 +34,7 @@ function Bottle() {
 
       <img
         className="hero-bottle-img"
-        src="src/assets/perfumereal.png"
+      src={bottleImage}
         alt="Luxury perfume bottle"
         style={{
           position: 'relative',
