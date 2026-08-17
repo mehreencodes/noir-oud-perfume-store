@@ -33,7 +33,7 @@ function Bottle() {
 
       <img
         className="hero-bottle-img"
-        src="src/assets/perfume.png"
+        src="src/assets/perfumereal.png"
         alt="Luxury perfume bottle"
         style={{
           position: 'relative',
