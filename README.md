@@ -4,8 +4,6 @@ A full-featured React e-commerce site for a fictional luxury perfume brand, buil
 
 **🔗 Live site:** [noir-oud-perfume-store-oy19.vercel.app](https://noir-oud-perfume-store-oy19.vercel.app/)
 
-![Noir Oud preview](./public/og-image.jpg)
-
 ---
 
 ## Features
