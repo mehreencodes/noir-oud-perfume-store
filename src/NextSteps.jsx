@@ -148,9 +148,21 @@ export function FinalCTA() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <Link to="/collection" className="btn-gold" style={{ textDecoration: 'none' }}>
+        {/* <Link to="/collection" className="btn-gold" style={{ textDecoration: 'none' }}>
           Explore the Collection
-        </Link>
+        </Link> */}
+        <Link
+  to="/collection"
+  className="btn-gold"
+  style={{
+    textDecoration: 'none',
+    display: 'inline-block',
+    width: '100%',
+    maxWidth: '320px',
+  }}
+>
+  Explore the Collection
+</Link>
       </motion.div>
     </section>
   );

@@ -38,29 +38,41 @@ const POSTS = [
   },
 ];
 
-// Intro banner for the /journal page — same visual language as
-// StoryIntro (eyebrow + heading + small meta line), sets context
-// before the card-deck below.
 function JournalIntro() {
   return (
     <section
       style={{
-        paddingTop: '9rem',
-        paddingBottom: '2rem',
+        paddingTop: '14rem',
+        paddingBottom: '4rem',
         textAlign: 'center',
         position: 'relative',
+        background:
+          'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,162,39,0.08), transparent 70%), linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%)',
+        overflow: 'hidden',
       }}
     >
       <div
         style={{
           position: 'absolute',
-          top: '0%',
+          top: '-10%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%)',
-          filter: 'blur(40px)',
+          width: '620px',
+          height: '620px',
+          background: 'radial-gradient(circle, rgba(201,162,39,0.16) 0%, transparent 70%)',
+          filter: 'blur(50px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-10%',
+          right: '20%',
+          width: '380px',
+          height: '380px',
+          background: 'radial-gradient(circle, rgba(138,75,35,0.12) 0%, transparent 70%)',
+          filter: 'blur(60px)',
           pointerEvents: 'none',
         }}
       />
@@ -84,7 +96,7 @@ function JournalIntro() {
           fontWeight: 400,
           fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           color: 'var(--ivory)',
-          margin: '1rem 0 1rem',
+          margin: '1.4rem 0 1.4rem',
           position: 'relative',
         }}
       >
@@ -104,13 +116,21 @@ function JournalIntro() {
       >
         {POSTS.length} entries · craft, guides, and life inside the studio
       </motion.p>
+
+      <div
+        style={{
+          position: 'relative',
+          width: '64px',
+          height: '1px',
+          background: 'var(--gold)',
+          margin: '2.2rem auto 0',
+          opacity: 0.6,
+        }}
+      />
     </section>
   );
 }
 
-// Card-deck reader: one large card in front, the rest peek from behind
-// at an offset. Clicking a back card or an index number brings it to
-// the front — an interaction, not just a scroll list.
 function JournalDeck() {
   const [order, setOrder] = useState(POSTS.map((p) => p.id));
 
@@ -134,7 +154,6 @@ function JournalDeck() {
       }}
       className="journal-deck-wrap"
     >
-      {/* the stack */}
       <div style={{ position: 'relative', height: '480px' }}>
         {order.map((id, slotIndex) => {
           const post = POSTS.find((p) => p.id === id);
@@ -242,7 +261,6 @@ function JournalDeck() {
         })}
       </div>
 
-      {/* index — click a number to bring that post to the front */}
       <div
         style={{
           display: 'flex',
@@ -317,22 +335,37 @@ function ContactIntro() {
   return (
     <section
       style={{
-        paddingTop: '9rem',
-        paddingBottom: '2rem',
+        paddingTop: '14rem',
+        paddingBottom: '4rem',
         textAlign: 'center',
         position: 'relative',
+        background:
+          'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,162,39,0.08), transparent 70%), linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%)',
+        overflow: 'hidden',
       }}
     >
       <div
         style={{
           position: 'absolute',
-          top: '0%',
+          top: '-10%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%)',
-          filter: 'blur(40px)',
+          width: '620px',
+          height: '620px',
+          background: 'radial-gradient(circle, rgba(201,162,39,0.16) 0%, transparent 70%)',
+          filter: 'blur(50px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-10%',
+          left: '20%',
+          width: '380px',
+          height: '380px',
+          background: 'radial-gradient(circle, rgba(138,75,35,0.12) 0%, transparent 70%)',
+          filter: 'blur(60px)',
           pointerEvents: 'none',
         }}
       />
@@ -356,7 +389,7 @@ function ContactIntro() {
           fontWeight: 400,
           fontSize: 'clamp(2.4rem, 5vw, 3.8rem)',
           color: 'var(--ivory)',
-          margin: '1rem 0 1rem',
+          margin: '1.4rem 0 1.4rem',
           position: 'relative',
         }}
       >
@@ -376,6 +409,17 @@ function ContactIntro() {
       >
         Three studios across Pakistan · replies within 24 hours
       </motion.p>
+
+      <div
+        style={{
+          position: 'relative',
+          width: '64px',
+          height: '1px',
+          background: 'var(--gold)',
+          margin: '2.2rem auto 0',
+          opacity: 0.6,
+        }}
+      />
     </section>
   );
 }
@@ -395,8 +439,6 @@ export function Contact() {
     { name: 'Islamabad', detail: 'By appointment · F-7 Markaz' },
   ];
 
-  // Get this from your Formspree form's dashboard — Settings -> the
-  // endpoint looks like https://formspree.io/f/xxxxxxxx
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpwlwgbr';
 
   async function handleSubmit(e) {
@@ -470,7 +512,6 @@ export function Contact() {
           alignItems: 'start',
         }}
       >
-        {/* left: styled contact form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: -20 }}
@@ -563,7 +604,6 @@ export function Contact() {
           </p>
         </motion.form>
 
-        {/* right: route-style location selector + email/hours */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -574,7 +614,6 @@ export function Contact() {
             Studio Locations
           </p>
 
-          {/* route line with three connected nodes */}
           <div
             style={{
               position: 'relative',

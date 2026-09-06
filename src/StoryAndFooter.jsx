@@ -11,28 +11,43 @@ const STATS = [
 
 // Intro banner for the /story page — sets context before the Story
 // section itself, matching the site's dark-luxury visual language.
-function StoryIntro() {
+  function StoryIntro() {
   const stages = ['Harvest', 'Distill', 'Rest', 'Bottle'];
 
   return (
     <section
       style={{
-        paddingTop: '9rem',
-        paddingBottom: '2rem',
+        paddingTop: '14rem',
+        paddingBottom: '4rem',
         textAlign: 'center',
         position: 'relative',
+        background:
+          'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,162,39,0.08), transparent 70%), linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%)',
+        overflow: 'hidden',
       }}
     >
       <div
         style={{
           position: 'absolute',
-          top: '0%',
+          top: '-10%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%)',
-          filter: 'blur(40px)',
+          width: '620px',
+          height: '620px',
+          background: 'radial-gradient(circle, rgba(201,162,39,0.16) 0%, transparent 70%)',
+          filter: 'blur(50px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-10%',
+          right: '20%',
+          width: '380px',
+          height: '380px',
+          background: 'radial-gradient(circle, rgba(138,75,35,0.12) 0%, transparent 70%)',
+          filter: 'blur(60px)',
           pointerEvents: 'none',
         }}
       />
@@ -99,9 +114,20 @@ function StoryIntro() {
                 }}
               />
             )}
-          </div>
+            </div>
         ))}
       </motion.div>
+
+      <div
+        style={{
+          position: 'relative',
+          width: '64px',
+          height: '1px',
+          background: 'var(--gold)',
+          margin: '2.2rem auto 0',
+          opacity: 0.6,
+        }}
+      />
     </section>
   );
 }

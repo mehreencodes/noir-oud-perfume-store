@@ -16,6 +16,11 @@ import Testimonials from './Testimonials';
 import { HowItWorks, FinalCTA } from './NextSteps';
 import Lookbook from './Lookbook';
 import { WishlistProvider } from './WishlistContext';
+import ProductPage from './ProductPage';
+import FeaturedProducts from './FeaturedProducts';
+import Account from './Account';
+import Checkout from './Checkout';
+import Gifting from './Gifting';
 
 
 export default function App() {
@@ -35,10 +40,13 @@ export default function App() {
             element={
               <>
                 <Hero />
+                  
                 <ScentFinder />
+                <FeaturedProducts />
                   <Lookbook />
                 <Testimonials />
                    <HowItWorks />
+                  
 <FinalCTA />
               </>
             }
@@ -46,6 +54,12 @@ export default function App() {
 
           {/* COLLECTION */}
           <Route path="/collection" element={<Showcase />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/gifting" element={<Gifting />} />
+
+
 
           {/* STORY */}
           <Route

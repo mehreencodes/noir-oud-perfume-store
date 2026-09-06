@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useDocumentTitle } from './hooks/useDocumentTitle';
 import bottleImage from './assets/perfume.png';
-
+// import HeroFeatures from './HeroFeatures';
 
 function Bottle() {
   return (
@@ -10,10 +10,10 @@ function Bottle() {
       className="hero-bottle"
       animate={{ y: [0, -14, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-      style={{
+               style={{
         position: 'relative',
         width: '680px',
-        maxWidth: '92vw',
+        maxWidth: '94vw',
       }}
     >
       {/* wider, stronger ambient glow behind the bottle */}
@@ -39,8 +39,8 @@ function Bottle() {
         style={{
           position: 'relative',
           width: '100%',
-          height: '680px',
-          maxHeight: '78vh',
+                      height: '760px',
+          maxHeight: '82vh',
           objectFit: 'contain',
           display: 'block',
           WebkitMaskImage:
@@ -63,8 +63,9 @@ function Bottle() {
         }}
       />
     </motion.div>
+       
   );
-}
+    }
 
 export default function Hero() {
   useDocumentTitle(
@@ -82,7 +83,7 @@ export default function Hero() {
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '2rem',
-    paddingTop: '8.5rem',
+        paddingTop: '11rem',
     flexWrap: 'wrap',
     position: 'relative',
     overflow: 'hidden',
@@ -101,15 +102,38 @@ export default function Hero() {
         }}
       />
 
-      <div style={{ maxWidth: '580px', zIndex: 2 }}>
-        <motion.p
-          className="eyebrow"
+      <div style={{ maxWidth: '580px', zIndex: 2, marginTop: '-3rem' }}>
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            border: '1px solid rgba(201,162,39,0.35)',
+            background: 'rgba(201,162,39,0.06)',
+            padding: '0.4rem 0.9rem',
+            borderRadius: '999px',
+          }}
         >
-          A Scent Studio
-        </motion.p>
+          <span
+            style={{
+              width: '5px',
+              height: '5px',
+              borderRadius: '50%',
+              background: 'var(--gold)',
+              display: 'inline-block',
+              boxShadow: '0 0 6px rgba(201,162,39,0.7)',
+            }}
+          />
+          <span
+            className="eyebrow"
+            style={{ margin: 0 }}
+          >
+            A Scent Studio
+          </span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -179,7 +203,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-     <motion.div
+        <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -188,37 +212,40 @@ export default function Hero() {
         <Bottle />
       </motion.div>
 
+      {/* <HeroFeatures /> */}
+
 <style>{`
         @media (max-width: 768px) {
           .hero-section {
-            padding-top: 8.5rem !important;
+            padding-top: 11.5rem !important;
             padding-bottom: 2rem !important;
             justify-content: center !important;
             text-align: center;
           }
           .hero-section > div:first-child {
             max-width: 100% !important;
+            margin-top: 0 !important;
           }
           .hero-section > div:first-child > div:last-child {
             justify-content: center !important;
           }
           .hero-bottle {
-            width: 340px !important;
+            width: 380px !important;
             margin-top: -1rem !important;
             margin-bottom: -1rem !important;
           }
           .hero-bottle-img {
-            height: 380px !important;
-            max-height: 50vh !important;
+            height: 420px !important;
+            max-height: 52vh !important;
           }
         }
-        @media (max-width: 480px) {
-          .hero-section { padding-top: 7.5rem !important; }
+           @media (max-width: 480px) {
+          .hero-section { padding-top: 10.5rem !important; }
           .hero-bottle {
-            width: 280px !important;
+            width: 300px !important;
           }
           .hero-bottle-img {
-            height: 320px !important;
+            height: 340px !important;
           }
         }
       `}</style>
