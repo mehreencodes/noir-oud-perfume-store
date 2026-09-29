@@ -32,8 +32,9 @@ function Bottle() {
         }}
       />
 
-      <img
+      {/* <img
         className="hero-bottle-img"
+        class="hero-product-image"
       src={bottleImage}
         alt="Luxury perfume bottle"
         style={{
@@ -48,8 +49,35 @@ function Bottle() {
           maskImage:
             'linear-gradient(to bottom, black 78%, transparent 100%)',
         }}
-      />
-      <div
+      /> */}
+      <img
+  className="hero-bottle-img"
+  src={bottleImage}
+  alt="Luxury perfume bottle"
+  style={{
+    position: 'relative',
+    width: '100%',
+    height: '760px',
+    maxHeight: '82vh',
+    objectFit: 'contain',
+    display: 'block',
+    // mask hata diya — ab image bottom se cut nahi lagegi
+  }}
+/>
+<div
+  style={{
+    position: 'absolute',
+    left: '5%',
+    right: '5%',
+    bottom: '10px',
+    height: '140px',
+    background:
+      'radial-gradient(ellipse at center, rgba(201,162,39,0.28) 0%, rgba(201,162,39,0.08) 45%, transparent 75%)',
+    filter: 'blur(25px)',
+    pointerEvents: 'none',
+  }}
+/>
+      {/* <div
         style={{
           position: 'absolute',
           left: '10%',
@@ -61,7 +89,7 @@ function Bottle() {
           filter: 'blur(20px)',
           pointerEvents: 'none',
         }}
-      />
+      /> */}
     </motion.div>
        
   );

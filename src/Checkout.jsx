@@ -191,9 +191,10 @@ export default function Checkout() {
   if (!items || items.length === 0) {
     return (
       <section
-        className="section"
-        style={{ textAlign: 'center', padding: '10rem 2rem', minHeight: '60vh' }}
+        className="checkout-success-section section"
+        style={{ textAlign: 'center', padding: '13rem 2rem 5rem', minHeight: '60vh' }}
       >
+   
         <p className="eyebrow" style={{ fontSize: '0.62rem' }}>Checkout</p>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', margin: '1rem 0 2rem' }}>
           Your checkout is empty.
@@ -208,9 +209,10 @@ export default function Checkout() {
   if (submitted) {
     return (
       <section
-        className="section"
-        style={{ textAlign: 'center', padding: '10rem 2rem', minHeight: '60vh' }}
+        className="checkout-success-section section"
+        style={{ textAlign: 'center', padding: '13rem 2rem 5rem', minHeight: '60vh' }}
       >
+   
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -255,8 +257,8 @@ export default function Checkout() {
     );
   }
 
-  return (
-    <section className="section" style={{ paddingTop: '7rem', paddingBottom: '5rem' }}>
+        return (
+    <section className="checkout-section section" style={{ paddingTop: '13rem', paddingBottom: '5rem' }}>
       <p className="eyebrow" style={{ fontSize: '0.62rem' }}>Noir Oud Checkout</p>
       <h1
         style={{
@@ -561,11 +563,31 @@ export default function Checkout() {
           </div>
         </div>
       </div>
-
+{/* 
       <style>{`
         @media (max-width: 900px) {
           .checkout-grid {
             grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .checkout-section {
+            padding-top: 13rem !important;
+          }
+        }
+      `}</style> */}
+      <style>{`
+        @media (max-width: 900px) {
+          .checkout-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .checkout-section {
+            padding-top: 13rem !important;
+          }
+          .checkout-success-section {
+            padding-top: 15rem !important;
           }
         }
       `}</style>

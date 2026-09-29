@@ -46,8 +46,8 @@ function GiftIntro() {
   return (
     <section
       style={{
-        paddingTop: '13rem',
-        paddingBottom: '2rem',
+        paddingTop: '16rem',
+        paddingBottom: '3.5rem',
         textAlign: 'center',
         position: 'relative',
       }}
@@ -110,6 +110,17 @@ function GiftIntro() {
         Thoughtfully paired sets, boxed and ready — each one designed to feel
         like more than the sum of its bottles.
       </motion.p>
+
+      <div
+        style={{
+          position: 'relative',
+          width: '64px',
+          height: '1px',
+          background: 'var(--gold)',
+          margin: '1.6rem auto 0',
+          opacity: 0.6,
+        }}
+      />
     </section>
   );
 }

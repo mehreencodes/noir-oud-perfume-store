@@ -568,36 +568,45 @@ function QuickViewModal({ product, onClose }) {
 function FilterBar({ active, onChange }) {
   const FAMILIES = ['All', 'Oud', 'Floral', 'Woody', 'Amber'];
   return (
-    <div
-      style={{
-        display: 'flex',
-        gap: '0.7rem',
-        flexWrap: 'wrap',
-        marginBottom: '3rem',
-      }}
-    >
-      {FAMILIES.map((f) => (
-        <button
-          key={f}
-          onClick={() => onChange(f)}
-          style={{
-            background: active === f ? 'var(--gold)' : 'transparent',
-            color: active === f ? 'var(--bg)' : 'var(--ivory)',
-            border: '1px solid var(--line)',
-            borderColor: active === f ? 'var(--gold)' : 'var(--line)',
-            padding: '0.5rem 1.2rem',
-            fontSize: '0.75rem',
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase',
-            fontFamily: 'var(--font-body)',
-            cursor: 'pointer',
-            borderRadius: '999px',
-            transition: 'all 0.25s ease',
-          }}
-        >
-          {f}
-        </button>
-      ))}
+    <div style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+      {FAMILIES.map((f) => {
+        const isActive = active === f;
+        return (
+          <button
+            key={f}
+            className={`filter-pill ${isActive ? 'is-active' : ''}`}
+            onClick={() => onChange(f)}
+            style={{
+              background: isActive ? 'var(--gold)' : 'transparent',
+              color: isActive ? 'var(--bg)' : 'var(--ivory)',
+              border: '1px solid var(--line)',
+              borderColor: isActive ? 'var(--gold)' : 'var(--line)',
+              padding: '0.5rem 1.2rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+              fontFamily: 'var(--font-body)',
+              cursor: 'pointer',
+              borderRadius: '999px',
+              transition: 'all 0.25s ease',
+            }}
+          >
+            {f}
+          </button>
+        );
+      })}
+      <style>{`
+        .filter-pill:hover {
+          border-color: var(--gold-soft) !important;
+          color: var(--gold-soft) !important;
+          background: rgba(201,162,39,0.08) !important;
+        }
+        .filter-pill.is-active:hover {
+          border-color: var(--gold) !important;
+          color: var(--bg) !important;
+          background: var(--gold) !important;
+        }
+      `}</style>
     </div>
   );
 }

@@ -274,3 +274,43 @@ body {
     padding-left: 2.5rem;
   }
 }
+
+/* ---------- Hero product image: load zoom + continuous float ---------- */
+
+@keyframes heroZoomIn {
+  from {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-product-image {
+  animation: heroZoomIn 0.9s ease-out forwards,
+             heroFloat 4s ease-in-out 0.9s infinite;
+}
+
+/* ---------- Fix: eyebrow badge overlapping announcement bar ---------- */
+
+.section {
+  position: relative;
+  padding-top: 9rem; /* pushes hero content below the top announcement bar */
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 6.5rem;
+  }
+}
